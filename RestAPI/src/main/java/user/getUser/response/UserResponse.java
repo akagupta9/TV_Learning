@@ -1,38 +1,20 @@
 package user.getUser.response;
 
+import user.common.response.BaseResponse;
 import user.common.response.Data;
 import user.common.response.Support;
 
+public class UserResponse extends BaseResponse{
 
-public class UserResponse {
+	private Data data;
+	private Support support;
 
-    private Data data;
-    private Support support;
-    private int statusCode;
+	public Data getData() {
+		return this.data;
+	}
 
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(int statusCode) {
-        this.statusCode = statusCode;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public Data getData() {
-        return this.data;
-    }
-
-    public void setSupport(Support support) {
-        this.support = support;
-    }
-
-    public Support getSupport() {
-        return this.support;
-    }
-
+	public Support getSupport() {
+		return this.support;
+	}
 
 }
