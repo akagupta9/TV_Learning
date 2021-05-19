@@ -1,4 +1,4 @@
-package user.getUser.request;
+package user.common.request;
 
 public class UserRequest {
 	

@@ -1,4 +1,5 @@
-package user.getUser.response;
+package user.common.response;
+
 
 public class Support {
 	private String url;

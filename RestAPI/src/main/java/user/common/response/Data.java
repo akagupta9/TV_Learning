@@ -1,4 +1,5 @@
-package user.getUser.response;
+package user.common.response;
+
 
 public class Data {
 	 private int id;
@@ -41,5 +42,6 @@ public class Data {
 	    public String getAvatar(){
 	        return this.avatar;
 	    }
+		
 }
 

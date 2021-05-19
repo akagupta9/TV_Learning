@@ -1,9 +1,12 @@
+package user;
+
 import static io.restassured.RestAssured.given;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import user.getUser.request.UserRequest;
+import user.common.request.UserRequest;
 import user.getUser.response.UserResponse;
+import user.getUsers.response.UsersResponse;
 
 public class UserClient {
 
@@ -22,14 +25,14 @@ public class UserClient {
 		return userResponse;
 	}
 
-	public UserResponse getAllUsers(UserRequest userRequest) {
+	public UsersResponse getAllUsers(UserRequest userRequest) {
 
 		Response response = given()
 				.contentType(ContentType.JSON)
 				 .when()
 				.get(userRequest.getBaseUrl());
 
-		UserResponse userResponse = response.as(UserResponse.class);
+		UsersResponse userResponse = response.as(UsersResponse.class);
 		userResponse.setStatusCode(response.getStatusCode());
 		return userResponse;
 	}
