@@ -1,7 +1,10 @@
-.gitignore
 
 #RESTAPI Project
 RestAPI/.idea
 RestAPI/RestAPI.iml
 RestAPI/target
-
+RestAPI/test-output
+RestAPI/.classpath
+RestAPI/.project
+RestAPI/RestAPI.iml
+RestAPI/.settings
