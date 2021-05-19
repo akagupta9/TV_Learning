@@ -3,7 +3,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import user.UserClient;
-import user.common.request.UserRequest;
+import user.createUser.request.CreateUserRequest;
+import user.createUser.response.CreateUserResponse;
+import user.getUser.request.UserRequest;
 import user.getUser.response.UserResponse;
 import user.getUsers.response.UsersResponse;
 
@@ -29,5 +31,16 @@ public class RestApiTest {
 		UserResponse userResponse = userClient.getUserResponse(userRequest);
 	    Assert.assertEquals(userResponse.getStatusCode(), 200);
 	    Assert.assertEquals(userResponse.getData().getFirst_name(), "Janet");
+	}
+
+	@Test
+	public void createUser() {
+		CreateUserRequest createUserRequest = new CreateUserRequest();
+		createUserRequest.setName("Akanksha");
+		createUserRequest.setJob("SDET");
+		CreateUserResponse createResponse = userClient.createUser(createUserRequest);
+		Assert.assertEquals(createResponse.getStatusCode(), 201);
+		Assert.assertEquals(createResponse.getName(),"Akanksha");
+		Assert.assertTrue(createResponse.getId()!=null);
 	}
 }

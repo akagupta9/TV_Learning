@@ -1,8 +1,9 @@
-package user.common.request;
+package user.getUser.request;
 
 public class UserRequest {
 	
 	private int userId;
+	
 	private final String baseUrl = "https://reqres.in/api/users";
 	
 	public int getUserId() {
